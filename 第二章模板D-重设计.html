@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板 D 重设计</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .scheme-slide {
+            padding-bottom: 120px;
+        }
+
+        .scheme-tag {
+            margin-bottom: 16px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--text-dim);
+            letter-spacing: 1.4px;
+        }
+
+        .overview-main {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-top: 72px;
+        }
+
+        .overview-stage {
+            position: relative;
+            flex: 1;
+            min-height: 560px;
+        }
+
+        .hub-shell {
+            position: absolute;
+            left: 50%;
+            bottom: 80px;
+            width: 980px;
+            transform: translateX(-50%);
+        }
+
+        .hub-topline {
+            width: 100%;
+            height: 1px;
+            background: #e1e5ea;
+            margin-bottom: 26px;
+        }
+
+        .hub-card {
+            padding: 34px 42px 30px;
+            border: 1px solid #dfe4ea;
+            background: linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
+        }
+
+        .hub-kicker {
+            display: inline-block;
+            margin-bottom: 14px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--google-blue);
+            letter-spacing: 1.4px;
+        }
+
+        .hub-title {
+            margin-bottom: 14px;
+            font-size: 52px;
+            line-height: 1.2;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .hub-text {
+            margin: 0;
+            font-size: 30px;
+            line-height: 1.72;
+            color: var(--text-body);
+        }
+
+        .pillar-row {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 36px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 42px;
+        }
+
+        .pillar-node {
+            position: relative;
+            padding-top: 26px;
+        }
+
+        .pillar-node::after {
+            content: "";
+            position: absolute;
+            left: 34px;
+            top: 100%;
+            width: 1px;
+            height: 112px;
+            background: #d9dee4;
+        }
+
+        .pillar-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: var(--blue-line);
+            background: var(--google-blue);
+        }
+
+        .pillar-index {
+            display: inline-block;
+            margin-bottom: 14px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--text-dim);
+            letter-spacing: 1.2px;
+        }
+
+        .pillar-title {
+            margin-bottom: 16px;
+            font-size: 40px;
+            line-height: 1.25;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .pillar-text {
+            margin: 0;
+            font-size: 27px;
+            line-height: 1.72;
+            color: var(--text-body);
+        }
+
+        .summary-strip {
+            margin-top: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .summary-label {
+            min-width: 120px;
+            padding-top: 8px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--google-blue);
+            letter-spacing: 1.3px;
+        }
+
+        .summary-text {
+            margin: 0;
+            font-size: 34px;
+            line-height: 1.65;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <section class="slide content-slide scheme-slide">
+        <p class="scheme-tag">模板 D / 重设计版 / 中心平台总览</p>
+        <div class="header">
+            <h1 class="title">2.1 总体方案概述</h1>
+        </div>
+        <p class="lead">智绘演示不是在传统 PPT 制作流程中增加一个 AI 入口，而是围绕完整演示任务构建 AI 原生工作平台。</p>
+
+        <div class="overview-main">
+            <div class="overview-stage">
+                <div class="pillar-row">
+                    <div class="pillar-node">
+                        <div class="pillar-line"></div>
+                        <span class="pillar-index">PILLAR 01</span>
+                        <h3 class="pillar-title">结构化内容底座</h3>
+                        <p class="pillar-text">以统一内容中间层承接演示表达，使标题、层级、要点与逻辑关系能够被持续组织、理解与加工。</p>
+                    </div>
+                    <div class="pillar-node">
+                        <div class="pillar-line"></div>
+                        <span class="pillar-index">PILLAR 02</span>
+                        <h3 class="pillar-title">AI 持续协同</h3>
+                        <p class="pillar-text">让 AI 深入草稿生成、编辑优化与风格生成全过程，使内容在同一工作流中持续完善。</p>
+                    </div>
+                    <div class="pillar-node">
+                        <div class="pillar-line"></div>
+                        <span class="pillar-index">PILLAR 03</span>
+                        <h3 class="pillar-title">一站式闭环</h3>
+                        <p class="pillar-text">通过预览、演示与导出打通成果输出环节，让完整演示任务在同一平台内连续完成。</p>
+                    </div>
+                </div>
+
+                <div class="hub-shell">
+                    <div class="hub-topline"></div>
+                    <div class="hub-card">
+                        <span class="hub-kicker">CORE PLATFORM</span>
+                        <div class="hub-title">AI 原生演示工作平台</div>
+                        <p class="hub-text">系统将演示制作的核心对象由“页面编辑”转向“内容表达”，使用户围绕主题意图、结构组织与结果把控开展工作，并让 AI 持续参与内容生成、编辑优化与页面呈现。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-strip">
+                <span class="summary-label">整体判断</span>
+                <p class="summary-text">因此，智绘演示不是沿用传统工具的人工编辑逻辑，也不止于单次结果生成，而是面向完整演示任务的智能工作平台。</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,571 @@
+:root {
+    /* Typora & Google Blue 极简色板 */
+    --google-blue: #1a73e8;
+    --google-blue-light: #f1f6fd; /* 非常淡的蓝色，模仿高亮背景 */
+    --bg-color: #ffffff;
+    --bg-canvas: #f0f2f5; 
+    --text-main: #202124;  /* 深黑 */
+    --text-body: #3c4043;  /* 深灰黑 正文 */
+    --text-dim: #5f6368;   /* 浅灰 注释 */
+    --border: #dadce0;     /* 极细浅灰边线 */
+    --blue-line: 4px;
+    
+    /* 字体：优先系统原生黑体与无衬线 */
+    --typora-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: var(--typora-font); 
+    -webkit-font-smoothing: antialiased;
+}
+
+body { 
+    background-color: var(--bg-canvas); /* 灰色工作台衬底 */
+    color: var(--text-body); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px; /* 两张 PPT 幻灯片间的舞台纵向间距 */
+    padding: 100px 40px;
+}
+
+/* =========================================================
+   幻灯片容器 (1920x1080)
+========================================================= */
+.slide { 
+    width: 1920px; 
+    height: 1080px; 
+    flex-shrink: 0;
+    display: flex; 
+    flex-direction: column; 
+    /* 舞台级留白：上下140px，左右180px */
+    padding: 140px 180px; 
+    background-color: var(--bg-color);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0,0,0,0.1); 
+    position: relative;
+    overflow: hidden;
+}
+
+/* 正文页专用：压缩顶部留白，避免标题区占高过大 */
+.content-slide {
+    padding-top: 96px;
+}
+
+/* =========================================================
+   舞台级大字号与 Typora 排版组件
+========================================================= */
+
+/* 1. 结构化标题 */
+.content-slide .header {
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e8eaed; /* 更克制的分割线，提升高级感 */
+    position: relative;
+}
+
+/* 使用伪元素制造 Markdown 的 '#' 标记视觉 */
+.content-slide .title {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+}
+.content-slide .lead {
+    font-size: 34px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 1500px;
+}
+.content-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 72px;
+}
+.compare-stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+}
+.compare-conclusion {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+.compare-conclusion .label {
+    min-width: 132px;
+    font-family: var(--code-font);
+    font-size: 18px;
+    color: var(--google-blue);
+    letter-spacing: 1.4px;
+    padding-top: 8px;
+}
+.compare-conclusion p {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.6;
+    color: var(--text-main);
+    font-weight: 600;
+}
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 64px;
+}
+.triple-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 64px;
+}
+.pain-card {
+    padding-top: 18px;
+    border-top: var(--blue-line) solid var(--google-blue);
+}
+.triple-card {
+    padding-top: 18px;
+    border-top: var(--blue-line) solid var(--google-blue);
+}
+.pain-card .pain-index {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-family: var(--code-font);
+    font-size: 18px;
+    color: var(--text-dim);
+    letter-spacing: 1.2px;
+}
+.pain-card h3 {
+    margin-bottom: 16px;
+}
+.triple-card h3 {
+    margin-bottom: 16px;
+}
+.pain-card p {
+    font-size: 28px;
+    line-height: 1.75;
+    color: var(--text-body);
+    margin: 0;
+}
+.triple-card p {
+    font-size: 28px;
+    line-height: 1.75;
+    color: var(--text-body);
+    margin: 0;
+}
+.entry-block {
+    margin-top: auto;
+    border-left: var(--blue-line) solid var(--google-blue);
+    padding: 8px 0 8px 28px;
+}
+.summary-block {
+    margin-top: auto;
+    border-left: var(--blue-line) solid var(--google-blue);
+    padding: 8px 0 8px 28px;
+}
+.entry-block p {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.65;
+    color: var(--text-main);
+    font-weight: 600;
+}
+.summary-block p {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.65;
+    color: var(--text-main);
+    font-weight: 600;
+}
+.flow-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 72px;
+}
+.flow-axis {
+    margin-top: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+}
+.flow-axis::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 41px;
+    height: var(--blue-line);
+    background: var(--google-blue);
+}
+.flow-axis-step {
+    position: relative;
+    padding-top: 74px;
+}
+.flow-axis-step::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--google-blue);
+}
+.flow-axis-step h3 {
+    margin-bottom: 14px;
+}
+.flow-axis-step p {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+.flow-grid {
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr 70px 1fr 70px 1fr;
+    align-items: center;
+    margin-top: 12px;
+}
+.flow-step {
+    min-height: 250px;
+    padding: 28px 28px 24px;
+    border: 1px solid #e3e7eb;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+.flow-step h3 {
+    margin-bottom: 18px;
+}
+.flow-step p {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+.flow-arrow {
+    position: relative;
+    height: 1px;
+    background: #d8dde3;
+    margin: 0 -14px;
+}
+.flow-arrow::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: -5px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #d8dde3;
+}
+.flow-conclusion {
+    margin-top: auto;
+    border-left: var(--blue-line) solid var(--google-blue);
+    padding: 8px 0 8px 28px;
+}
+.flow-conclusion p {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.65;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* 封面专用巨型标题组合 */
+.cover-main-title {
+    font-size: 110px;
+    font-weight: 900;
+    color: var(--text-main);
+    letter-spacing: 12px;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+.cover-sub-title {
+    font-size: 44px;
+    font-weight: 400;
+    color: var(--text-dim);
+    letter-spacing: 4px;
+    line-height: 1.5;
+    margin-bottom: 80px;
+}
+
+
+/* 2. 巨型数字节点（章节过渡页） */
+.giant-number {
+    font-size: 140px;
+    font-family: var(--code-font);
+    font-weight: 800;
+    color: #bdc1c6; /* 淡灰色，让蓝色只保留在竖线上 */
+    line-height: 1;
+    margin-bottom: 24px;
+}
+.section-title {
+    font-size: 72px; /* 从 64px 提升，成为页面视觉主角 */
+    color: var(--text-main);
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+/* 3. 正文排版系统 */
+p, li {
+    font-size: 32px; /* 幻灯片舞台正文安全极限界限，确保最后排可见 */
+    line-height: 1.8;
+    color: var(--text-body);
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-bottom: 16px;
+    list-style: none;
+    position: relative;
+    padding-left: 40px;
+}
+li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--text-body);
+}
+
+/* 二级小标题结构 */
+.content-slide h3 {
+    font-size: 36px;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* 强烈的高级 Markdown 引用块 */
+blockquote {
+    border-left: var(--blue-line) solid var(--google-blue);
+    background-color: var(--google-blue-light);
+    padding: 32px 48px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+blockquote strong {
+    color: var(--google-blue);
+    font-size: 36px;
+    display: block;
+    margin-bottom: 16px;
+}
+blockquote p {
+    font-size: 30px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* 极其醒目的 Inline Code / Keyword 标记 */
+.keyword {
+    font-family: var(--code-font);
+    color: var(--google-blue);
+    background-color: var(--google-blue-light);
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 90%;
+}
+
+/* =========================================================
+   布局 Grid 容器 (完全解除边框封装，通过间距和色块划分)
+========================================================= */
+.grid-container { 
+    display: grid; 
+    gap: 64px; /* 巨大的呼吸感间距 */
+    flex-grow: 1; 
+    align-content: start; 
+}
+.grid-container.col-2 { grid-template-columns: 1fr 1fr; }
+.grid-container.col-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* 原来的 .card 变成没有边框的逻辑内容簇 (.content-cluster) */
+.content-cluster {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   大纲列表：左右偏置分栏 (Split-Screen) 特有布局
+========================================================= */
+.outline-split-slide {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0; /* 由 divider 自带 margin 控制间距 */
+}
+.split-left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.split-title {
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--text-main);
+    letter-spacing: 4px;
+    line-height: 1.2;
+}
+
+/* 垂直蓝线分界线：整页唯一的蓝色点缀 */
+.split-divider {
+    width: var(--blue-line); /* 统一全 PPT 蓝线粗细 */
+    height: 55%; /* 不贯穿全屏，保留上下呼吸空间 */
+    background-color: var(--google-blue);
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin: 0 80px; /* 左右间距 */
+}
+
+.split-right {
+    width: 55%;
+    display: flex;
+    align-items: center;
+}
+
+/* 列表容器 */
+.outline-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 52px;
+    width: 100%;
+}
+.outline-item {
+    display: flex;
+    align-items: center;
+}
+.outline-item .num {
+    font-size: 36px; /* 缩小，退居辅助角色 */
+    font-weight: 500;
+    font-family: var(--code-font);
+    color: var(--text-dim); /* 方案A：灰色标记 */
+    margin-right: 32px;
+    width: 60px;
+    text-align: right;
+}
+.outline-item .text {
+    font-size: 44px;
+    font-weight: 600; /* 文字为主角，字重最高 */
+    color: var(--text-main);
+}
+.outline-item.active .text {
+    font-weight: 800;
+}
+
+/* =========================================================
+   底部导航条 (固定定位，绝对垂直居中极简设计)
+========================================================= */
+.bottom-nav {
+    position: absolute;
+    bottom: 0; /* 绝对贴底：消除下方的多余安全边距导致的重心失衡 */
+    left: 140px;
+    right: 140px; 
+    height: 70px; /* 整体高度 */
+    border-top: 1px solid #f1f3f4; /* 极淡分隔线，若隐若现 */
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    z-index: 10;
+}
+.nav-item {
+    font-size: 18px; /* 微缩，辅助信息不抢主角 */
+    color: #9aa0a6; /* 更浅的灰，削弱存在感 */
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    height: 100%; /* 元素撑满整个父级高度 60px */
+    display: flex;
+    align-items: center; /* 在 60px 的高度内实现绝对的垂直居中！ */
+}
+.nav-item.active {
+    color: var(--google-blue);
+    font-weight: 700;
+}
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    top: -1.5px; /* 悬挂在顶边：使用负数补偿 1px 细线自身高度，与灰线完美居中重合 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* 蓝线与文字等宽，精确工整 */
+    height: 3px;
+    background-color: var(--google-blue);
+    border-radius: 4px;
+}
+
+/* =========================================================
+   悬浮操作区（导出组件）
+========================================================= */
+.export-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--google-blue);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 2000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.export-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(26, 115, 232, 0.5);
+    background-color: #1765cc;
+}
+.export-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.export-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.export-overlay p {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--google-blue);
+    margin-top: 32px;
+    font-family: var(--code-font);
+}
+.spinner {
+    width: 60px; height: 60px;
+    border: 6px solid var(--google-blue-light);
+    border-top: 6px solid var(--google-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

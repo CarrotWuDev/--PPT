@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1 迁移式表达方案</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .transition-stage {
+            display: grid;
+            grid-template-columns: 1fr 120px 1fr 120px 1fr;
+            align-items: start;
+            gap: 0;
+            margin-top: 12px;
+        }
+
+        .transition-node {
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+        }
+
+        .transition-node h3 {
+            margin-bottom: 28px;
+        }
+
+        .transition-block {
+            border-left: var(--blue-line) solid var(--google-blue);
+            padding-left: 32px;
+            background: transparent;
+        }
+
+        .transition-block p {
+            margin: 0;
+            font-size: 30px;
+            line-height: 1.85;
+            color: var(--text-body);
+        }
+
+        .transition-connector {
+            position: relative;
+            height: 100%;
+            min-height: 420px;
+        }
+
+        .transition-connector::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            top: 112px;
+            height: var(--blue-line);
+            background: var(--google-blue);
+        }
+
+        .transition-connector::after {
+            content: '';
+            position: absolute;
+            right: 18px;
+            top: 106px;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 14px solid var(--google-blue);
+        }
+
+        .transition-conclusion {
+            margin-top: auto;
+            border-left: var(--blue-line) solid var(--google-blue);
+            padding: 8px 0 8px 28px;
+        }
+
+        .transition-conclusion p {
+            margin: 0;
+            font-size: 34px;
+            line-height: 1.65;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="slide content-slide" id="slide1-scheme1">
+        <div class="header">
+            <h1 class="title">1.1 人工智能驱动演示生产方式变革</h1>
+        </div>
+        <p class="lead">生成式人工智能正在推动演示生产方式重构，核心变化不只是效率提升，而是人与 AI 在完整任务中的角色重新分工。</p>
+
+        <div class="content-main">
+            <div class="transition-stage">
+                <div class="transition-node">
+                    <h3>过去：手工排版主导</h3>
+                    <div class="transition-block">
+                        <p>人工承担内容整理、结构梳理、页面排版与反复修改，演示制作整体围绕页面操作展开。</p>
+                    </div>
+                </div>
+
+                <div class="transition-connector" aria-hidden="true"></div>
+
+                <div class="transition-node">
+                    <h3>变化：角色重新分工</h3>
+                    <div class="transition-block">
+                        <p>人的重点转向提出意图、组织表达和把控结果，AI 持续参与内容生成、编辑优化与风格生成。</p>
+                    </div>
+                </div>
+
+                <div class="transition-connector" aria-hidden="true"></div>
+
+                <div class="transition-node">
+                    <h3>结果：形成新型工作方式</h3>
+                    <div class="transition-block">
+                        <p>演示任务逐步由手工排版主导，转向以结构化表达和 AI 协同为核心的新型工作方式。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transition-conclusion">
+                <p>这场变化的本质，不是给传统流程增加一个 AI 工具，而是把演示生产从页面导向推进到结构化表达与协同导向。</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

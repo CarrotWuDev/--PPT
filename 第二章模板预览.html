@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二章模板预览</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .template-slide {
+            padding-bottom: 120px;
+        }
+
+        .template-tag {
+            margin-bottom: 16px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--text-dim);
+            letter-spacing: 1.4px;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 44px;
+            margin-top: 72px;
+        }
+
+        .pillar-card {
+            display: flex;
+            flex-direction: column;
+            padding-top: 22px;
+            border-top: var(--blue-line) solid var(--google-blue);
+        }
+
+        .pillar-kicker {
+            margin-bottom: 14px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--text-dim);
+            letter-spacing: 1.2px;
+        }
+
+        .pillar-card h3 {
+            margin-bottom: 16px;
+        }
+
+        .pillar-card p {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.75;
+            color: var(--text-body);
+        }
+
+        .summary-block {
+            margin-top: auto;
+            border-left: var(--blue-line) solid var(--google-blue);
+            padding: 8px 0 8px 28px;
+        }
+
+        .summary-block p {
+            margin: 0;
+            font-size: 34px;
+            line-height: 1.65;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .flow-main {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-top: 72px;
+        }
+
+        .flow-axis {
+            margin-top: 10px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+        }
+
+        .flow-axis::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 44px;
+            height: var(--blue-line);
+            background: var(--google-blue);
+        }
+
+        .flow-axis-step {
+            position: relative;
+            padding-top: 74px;
+        }
+
+        .flow-axis-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 32px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--google-blue);
+        }
+
+        .flow-axis-step h3 {
+            margin-bottom: 14px;
+        }
+
+        .flow-axis-step p {
+            margin: 0;
+            font-size: 26px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .flow-conclusion {
+            margin-top: auto;
+            border-left: var(--blue-line) solid var(--google-blue);
+            padding: 8px 0 8px 28px;
+        }
+
+        .flow-conclusion p {
+            margin: 0;
+            font-size: 34px;
+            line-height: 1.65;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <section class="slide content-slide template-slide">
+        <p class="template-tag">模板 C / 三支柱总览页</p>
+        <div class="header">
+            <h1 class="title">2.1 总体方案概述</h1>
+        </div>
+        <p class="lead">智绘演示不是在传统流程中增加 AI 入口，而是围绕完整演示任务构建 AI 原生工作平台。</p>
+
+        <div class="content-main">
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <span class="pillar-kicker">PILLAR 01</span>
+                    <h3>结构化内容底座</h3>
+                    <p>以统一的内容中间层承接演示表达，使标题、层级、要点与逻辑关系能够被持续组织和加工。</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-kicker">PILLAR 02</span>
+                    <h3>AI 持续协同</h3>
+                    <p>让 AI 参与草稿生成、编辑优化与风格生成，使演示内容能够在同一工作流中不断完善。</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-kicker">PILLAR 03</span>
+                    <h3>一站式闭环</h3>
+                    <p>通过预览、演示与导出打通成果输出环节，让完整演示任务在同一平台内连续完成。</p>
+                </div>
+            </div>
+
+            <div class="summary-block">
+                <p>整体上，系统将演示制作的核心对象由“页面编辑”转向“内容表达”，形成面向 AI 时代完整演示任务的智能工作平台。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide content-slide template-slide">
+        <p class="template-tag">模板 D / 流程闭环页</p>
+        <div class="header">
+            <h1 class="title">2.4 一站式闭环系统设计</h1>
+        </div>
+        <p class="lead">系统进一步打通预览、演示控制与成果输出环节，使完整演示任务能够在同一平台内连续完成。</p>
+
+        <div class="flow-main">
+            <div class="flow-axis">
+                <div class="flow-axis-step">
+                    <h3>内容形成</h3>
+                    <p>围绕主题意图和结构组织完成草稿生成与持续编辑。</p>
+                </div>
+                <div class="flow-axis-step">
+                    <h3>实时预览</h3>
+                    <p>在统一工作台中即时查看页面呈现效果并校准表达。</p>
+                </div>
+                <div class="flow-axis-step">
+                    <h3>演示控制</h3>
+                    <p>支持正式演示场景下的展示组织与过程控制。</p>
+                </div>
+                <div class="flow-axis-step">
+                    <h3>成果输出</h3>
+                    <p>在同一系统内完成导出交付，形成连续闭环。</p>
+                </div>
+            </div>
+
+            <div class="flow-conclusion">
+                <p>由此，内容表达、AI 协同、页面呈现与成果输出被统一组织到同一工作流中，构成 AI 原生演示的闭环系统。</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

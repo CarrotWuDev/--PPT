@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭环流程设计方案</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .scheme-slide {
+            padding-bottom: 120px;
+        }
+
+        .scheme-tag {
+            margin-bottom: 16px;
+            font-family: var(--code-font);
+            font-size: 18px;
+            color: var(--text-dim);
+            letter-spacing: 1.4px;
+        }
+
+        .scheme-note {
+            margin-top: 18px;
+            font-size: 22px;
+            color: var(--text-dim);
+        }
+
+        .flow-summary {
+            margin-top: auto;
+            border-left: var(--blue-line) solid var(--google-blue);
+            padding: 8px 0 8px 28px;
+        }
+
+        .flow-summary p {
+            margin: 0;
+            font-size: 34px;
+            line-height: 1.65;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .axis-flow {
+            margin-top: 82px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+        }
+
+        .axis-flow::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 44px;
+            height: var(--blue-line);
+            background: var(--google-blue);
+        }
+
+        .axis-step {
+            position: relative;
+            padding-top: 74px;
+        }
+
+        .axis-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 32px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--google-blue);
+        }
+
+        .axis-step h3 {
+            margin-bottom: 14px;
+        }
+
+        .axis-step p {
+            margin: 0;
+            font-size: 26px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .plain-flow {
+            display: grid;
+            grid-template-columns: 1fr 64px 1fr 64px 1fr 64px 1fr;
+            align-items: start;
+            gap: 0;
+            margin-top: 82px;
+        }
+
+        .plain-step h3 {
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .plain-step p {
+            margin: 0;
+            font-size: 26px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .plain-arrow {
+            position: relative;
+            margin-top: 22px;
+            height: 1px;
+            background: #d8dde3;
+        }
+
+        .plain-arrow::after {
+            content: '';
+            position: absolute;
+            right: -1px;
+            top: -5px;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid #d8dde3;
+        }
+
+        .beam-wrap {
+            margin-top: 72px;
+        }
+
+        .beam-platform {
+            margin: 0 auto 46px;
+            width: 720px;
+            padding: 18px 28px;
+            border-bottom: var(--blue-line) solid var(--google-blue);
+            text-align: center;
+        }
+
+        .beam-platform h3 {
+            margin-bottom: 10px;
+        }
+
+        .beam-platform p {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--text-dim);
+        }
+
+        .beam-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 36px;
+        }
+
+        .beam-step {
+            position: relative;
+            padding-top: 28px;
+        }
+
+        .beam-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 18px;
+            background: var(--border);
+        }
+
+        .beam-step h3 {
+            margin-bottom: 14px;
+        }
+
+        .beam-step p {
+            margin: 0;
+            font-size: 25px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .loop-track {
+            margin-top: 74px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 36px;
+            position: relative;
+        }
+
+        .loop-step {
+            padding: 22px 24px 20px;
+            border-top: var(--blue-line) solid var(--google-blue);
+        }
+
+        .loop-step h3 {
+            margin-bottom: 14px;
+        }
+
+        .loop-step p {
+            margin: 0;
+            font-size: 25px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .loop-hint {
+            margin-top: 24px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 14px;
+            color: var(--text-dim);
+            font-size: 22px;
+        }
+
+        .loop-hint .curve {
+            width: 120px;
+            height: 44px;
+            border-top: 1px solid var(--google-blue);
+            border-right: 1px solid var(--google-blue);
+            border-top-right-radius: 32px;
+        }
+    </style>
+</head>
+<body>
+    <section class="slide content-slide scheme-slide">
+        <p class="scheme-tag">方案 1 / 蓝色中轴流程</p>
+        <div class="header">
+            <h1 class="title">2.4 一站式闭环系统设计</h1>
+        </div>
+        <p class="lead">系统进一步打通内容形成、实时预览、演示控制与成果输出环节，使完整演示任务在同一平台内连续完成。</p>
+
+        <div class="content-main">
+            <div class="axis-flow">
+                <div class="axis-step">
+                    <h3>内容形成</h3>
+                    <p>围绕主题意图与结构组织完成草稿生成，并在统一底稿上持续编辑。</p>
+                </div>
+                <div class="axis-step">
+                    <h3>实时预览</h3>
+                    <p>在同一工作台中即时查看页面呈现效果，持续校准表达与呈现方式。</p>
+                </div>
+                <div class="axis-step">
+                    <h3>演示控制</h3>
+                    <p>进一步打通正式演示场景，使展示组织与过程控制纳入同一系统。</p>
+                </div>
+                <div class="axis-step">
+                    <h3>成果输出</h3>
+                    <p>在平台内完成导出交付，形成从内容形成到成果输出的连续闭环。</p>
+                </div>
+            </div>
+
+            <div class="flow-summary">
+                <p>由此，内容表达、AI 协同、页面呈现和成果输出被统一组织到同一工作流中，形成 AI 原生演示的一站式闭环系统。</p>
+            </div>
+        </div>
+        <p class="scheme-note">特征：蓝线作为主骨架，最接近你现有目录页和章节页的高级感。</p>
+    </section>
+
+    <section class="slide content-slide scheme-slide">
+        <p class="scheme-tag">方案 2 / 去边框流程</p>
+        <div class="header">
+            <h1 class="title">2.4 一站式闭环系统设计</h1>
+        </div>
+        <p class="lead">系统进一步打通内容形成、实时预览、演示控制与成果输出环节，使完整演示任务在同一平台内连续完成。</p>
+
+        <div class="content-main">
+            <div class="plain-flow">
+                <div class="plain-step">
+                    <h3>内容形成</h3>
+                    <p>围绕主题意图与结构组织完成草稿生成，并在统一底稿上持续编辑。</p>
+                </div>
+                <div class="plain-arrow"></div>
+                <div class="plain-step">
+                    <h3>实时预览</h3>
+                    <p>在同一工作台中即时查看页面呈现效果，持续校准表达与呈现方式。</p>
+                </div>
+                <div class="plain-arrow"></div>
+                <div class="plain-step">
+                    <h3>演示控制</h3>
+                    <p>进一步打通正式演示场景，使展示组织与过程控制纳入同一系统。</p>
+                </div>
+                <div class="plain-arrow"></div>
+                <div class="plain-step">
+                    <h3>成果输出</h3>
+                    <p>在平台内完成导出交付，形成从内容形成到成果输出的连续闭环。</p>
+                </div>
+            </div>
+
+            <div class="flow-summary">
+                <p>由此，内容表达、AI 协同、页面呈现和成果输出被统一组织到同一工作流中，形成 AI 原生演示的一站式闭环系统。</p>
+            </div>
+        </div>
+        <p class="scheme-note">特征：去掉灰框，只保留文字与箭头，整体更轻、更克制。</p>
+    </section>
+
+    <section class="slide content-slide scheme-slide">
+        <p class="scheme-tag">方案 3 / 平台主梁</p>
+        <div class="header">
+            <h1 class="title">2.4 一站式闭环系统设计</h1>
+        </div>
+        <p class="lead">系统进一步打通内容形成、实时预览、演示控制与成果输出环节，使完整演示任务在同一平台内连续完成。</p>
+
+        <div class="content-main">
+            <div class="beam-wrap">
+                <div class="beam-platform">
+                    <h3>统一演示工作平台</h3>
+                    <p>将内容表达、AI 协同、页面呈现与成果输出统一组织到同一系统中。</p>
+                </div>
+                <div class="beam-grid">
+                    <div class="beam-step">
+                        <h3>内容形成</h3>
+                        <p>草稿生成与持续编辑在统一底稿上完成。</p>
+                    </div>
+                    <div class="beam-step">
+                        <h3>实时预览</h3>
+                        <p>即时校准表达与页面呈现效果。</p>
+                    </div>
+                    <div class="beam-step">
+                        <h3>演示控制</h3>
+                        <p>展示组织与过程控制纳入同一系统。</p>
+                    </div>
+                    <div class="beam-step">
+                        <h3>成果输出</h3>
+                        <p>平台内完成导出交付并形成闭环。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-summary">
+                <p>由此，完整演示任务不再被拆散到多个工具和阶段中，而是在统一平台内连续完成。</p>
+            </div>
+        </div>
+        <p class="scheme-note">特征：强调“同一平台”而非“四个独立步骤”，系统感最强。</p>
+    </section>
+
+    <section class="slide content-slide scheme-slide">
+        <p class="scheme-tag">方案 4 / 弱回环提示</p>
+        <div class="header">
+            <h1 class="title">2.4 一站式闭环系统设计</h1>
+        </div>
+        <p class="lead">系统进一步打通内容形成、实时预览、演示控制与成果输出环节，使完整演示任务在同一平台内连续完成。</p>
+
+        <div class="content-main">
+            <div class="loop-track">
+                <div class="loop-step">
+                    <h3>内容形成</h3>
+                    <p>围绕主题意图与结构组织完成草稿生成，并在统一底稿上持续编辑。</p>
+                </div>
+                <div class="loop-step">
+                    <h3>实时预览</h3>
+                    <p>在同一工作台中即时查看页面呈现效果，持续校准表达与呈现方式。</p>
+                </div>
+                <div class="loop-step">
+                    <h3>演示控制</h3>
+                    <p>进一步打通正式演示场景，使展示组织与过程控制纳入同一系统。</p>
+                </div>
+                <div class="loop-step">
+                    <h3>成果输出</h3>
+                    <p>在平台内完成导出交付，形成从内容形成到成果输出的连续闭环。</p>
+                </div>
+            </div>
+
+            <div class="loop-hint">
+                <span>形成闭环</span>
+                <span class="curve"></span>
+            </div>
+
+            <div class="flow-summary">
+                <p>由此，内容表达、AI 协同、页面呈现和成果输出被统一组织到同一工作流中，形成 AI 原生演示的一站式闭环系统。</p>
+            </div>
+        </div>
+        <p class="scheme-note">特征：整体仍是横向流程，但用轻微回扣关系强调“闭环”而不是单向结束。</p>
+    </section>
+</body>
+</html>
