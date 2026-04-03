@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>马克演示 - 极致极简汇报版</title>
     <!-- 引入独立外联样式表 -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- 引入导出 PPTX 所需库 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
@@ -14,16 +15,21 @@
     <!-- 引入独立导出业务逻辑 -->
     <script src="js/export.js" defer></script>
 </head>
+
 <body>
 
     <!-- 0. 首页 -->
     <section class="slide" id="slide0">
-        <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <div
+            style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
             <h1 class="cover-main-title">马克演示</h1>
             <h2 class="cover-sub-title">基于生成式人工智能的一站式 PPT 演示系统</h2>
-            
-            <div style="text-align: center; border-top: var(--blue-line) solid var(--google-blue); padding-top: 48px; width: fit-content; min-width: 220px;">
-                <p style="font-size: 24px; color: var(--text-dim); font-family: var(--code-font); font-weight: 500; letter-spacing: 2px; white-space: nowrap;">2026.04.03</p>
+
+            <div
+                style="text-align: center; border-top: var(--blue-line) solid var(--google-blue); padding-top: 48px; width: fit-content; min-width: 220px;">
+                <p
+                    style="font-size: 24px; color: var(--text-dim); font-family: var(--code-font); font-weight: 500; letter-spacing: 2px; white-space: nowrap;">
+                    2026.04.03</p>
             </div>
         </div>
     </section>
@@ -68,7 +74,7 @@
                 <h1 class="section-title">项目背景</h1>
             </div>
         </div>
-    
+
     </section>
 
     <!-- Slide 1.1 -->
@@ -76,32 +82,34 @@
         <div class="header">
             <h1 class="title">1.1 人工智能驱动演示生产方式变革</h1>
         </div>
-        <p class="lead">演示任务正由手工排版主导，逐步转向以结构化表达和 AI 协同为核心的新型工作方式。</p>
+        <p class="lead">生成式 AI 正在推动演示生产由人工主导执行，转向结构化表达与 AI 持续协同。</p>
         <div class="content-main">
             <div class="compare-stage">
                 <div class="content-cluster">
-                    <h3>传统：手工排版主导</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <h3>传统：人工主导演示制作</h3>
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.8;">
                             <li>内容整理与结构梳理主要依赖人工</li>
-                            <li>页面排版与反复修改主要依赖人工</li>
-                            <li>演示生产整体由人工主导完成</li>
+                            <li>页面排版与版面调整主要依赖人工</li>
+                            <li>演示任务整体由人工串联完成</li>
                         </ul>
                     </blockquote>
                 </div>
                 <div class="content-cluster">
-                    <h3>AI 时代：意图驱动协同</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <h3>AI 时代：结构化表达协同</h3>
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.8;">
-                            <li>人的重点转向意图表达与结果把控</li>
-                            <li>AI 参与内容生成、编辑优化与风格生成</li>
-                            <li>演示任务转向结构化表达与 AI 协同</li>
+                            <li>人的重点转向意图组织与结果把控</li>
+                            <li>AI 持续参与内容生成、优化与风格生成</li>
+                            <li>演示生产转向结构化表达与人机协同</li>
                         </ul>
                     </blockquote>
                 </div>
             </div>
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item active">01 项目背景</span>
@@ -110,7 +118,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">02</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">02</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -119,26 +128,28 @@
         <div class="header">
             <h1 class="title">1.2 传统PPT工具与直接生成PPT工具的局限</h1>
         </div>
-        <p class="lead">前者强调人工主导的页面编辑，后者强调单次结果生成。</p>
+        <p class="lead">前者强调人工排版和过程控制，后者强调单次结果输出。</p>
         <div class="content-main">
             <div class="compare-stage">
                 <div class="content-cluster">
-                    <h3>传统 PPT 工具</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <h3>人工主导型工具</h3>
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.4;">
-                            <li>已形成较成熟的人工主导方式</li>
-                            <li>核心逻辑仍围绕页面编辑展开</li>
-                            <li>内容梳理与排版仍需大量精力</li>
+                            <li>演示制作整体仍由人工主导</li>
+                            <li>内容梳理与版面调整主要靠人工完成</li>
+                            <li>更适合过程控制，但制作成本较高</li>
                         </ul>
                     </blockquote>
                 </div>
                 <div class="content-cluster">
-                    <h3>直接生成类产品</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <h3>单次出稿型工具</h3>
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.4;">
                             <li>能够快速给出一版结果</li>
-                            <li>核心优势更多体现在单次出稿</li>
-                            <li>难撑修改、控风格与任务衔接</li>
+                            <li>生成后难持续修改与控制风格</li>
+                            <li>更擅长单次出稿，但任务衔接不足</li>
                         </ul>
                     </blockquote>
                 </div>
@@ -148,7 +159,7 @@
                 <p>共同局限：都难以同时满足结构化表达、AI 持续协同和完整闭环的需求。</p>
             </div>
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item active">01 项目背景</span>
@@ -157,7 +168,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">03</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">03</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -166,29 +178,29 @@
         <div class="header">
             <h1 class="title">1.3 用户核心痛点与项目切入点</h1>
         </div>
-        <p class="lead">用户痛点集中在内容底稿、制作成本与持续协同三方面。</p>
+        <p class="lead">用户痛点主要集中在内容底稿缺失、人工制作成本高和 AI 结果难持续加工三个层面。</p>
 
         <div class="content-main">
             <div class="triple-grid">
                 <div class="triple-card">
-                    <h3>缺乏结构化底稿</h3>
-                    <p>演示内容缺乏统一承载方式，难以沉淀为可持续修改与加工的结构化底稿。</p>
+                    <h3>缺少结构化底稿</h3>
+                    <p>演示内容缺乏统一承载方式，难以形成可持续修改与加工的内容底稿。</p>
                 </div>
                 <div class="triple-card">
                     <h3>人工制作成本高</h3>
-                    <p>由于缺少稳定底稿，传统制作往往依赖人工排版与反复调整，表达和制作成本都偏高。</p>
+                    <p>传统方式仍依赖人工完成内容梳理与版面调整，导致内容表达与页面制作成本较高。</p>
                 </div>
                 <div class="triple-card">
-                    <h3>AI 难以持续协同</h3>
-                    <p>现有 AI 结果多停留在单次出稿，难以在统一底稿上持续修改、继续加工并接入完整流程。</p>
+                    <h3>AI 结果难持续加工</h3>
+                    <p>现有 AI 结果多停留在单次出稿层面，难以围绕同一底稿持续优化并衔接后续流程。</p>
                 </div>
             </div>
 
             <div class="entry-block">
-                <p>项目既不沿用传统工具的人工排版路径，也不采用单次生成即结束的出稿路径，而是以结构化底稿为核心，构建 AI 持续协同、结果可持续加工的一站式演示工作流。</p>
+                <p>项目既不沿用人工排版和过程控制主导的路径，也不采用单次生成即结束的出稿路径，而是以结构化底稿为核心，构建 AI 持续协同、结果可持续加工的一站式演示工作流。</p>
             </div>
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item active">01 项目背景</span>
@@ -197,7 +209,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">04</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">04</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -209,7 +222,7 @@
                 <h1 class="section-title">总体方案与核心设计</h1>
             </div>
         </div>
-    
+
     </section>
 
     <!-- Slide 2.1 -->
@@ -217,13 +230,13 @@
         <div class="header">
             <h1 class="title">2.1 总体方案概述</h1>
         </div>
-        <p class="lead">马克演示围绕完整演示任务构建 AI 原生工作平台，其总体方案由结构化内容底座、AI 持续协同和一站式闭环共同构成。</p>
+        <p class="lead">马克演示不是在传统流程中增加 AI 入口，而是相较于人工排版和过程控制主导的路径、单次出稿为主的路径，围绕完整演示任务构建 AI 原生工作平台。</p>
 
         <div class="content-main">
             <div class="triple-grid">
                 <div class="triple-card">
                     <h3>结构化内容底座</h3>
-                    <p>以统一内容中间层承接演示表达，使主题、层级、要点与逻辑关系能够被持续组织和加工。</p>
+                    <p>以结构化底稿承接演示内容表达，使标题、层级、要点与逻辑关系能够被统一组织。</p>
                 </div>
                 <div class="triple-card">
                     <h3>AI 持续协同</h3>
@@ -231,15 +244,15 @@
                 </div>
                 <div class="triple-card">
                     <h3>一站式闭环</h3>
-                    <p>通过预览、演示和导出打通成果输出环节，让完整演示任务在同一平台内连续完成。</p>
+                    <p>将预览、演示与导出纳入同一工作链路，支撑完整演示任务连续完成。</p>
                 </div>
             </div>
             <div class="summary-block">
-                <p>核心升级不是“传统流程 + AI 入口”，而是“结构化表达驱动的完整演示工作流”。</p>
+                <p>核心升级不是“传统流程 + AI 入口”，而是“结构化表达驱动的 AI 原生演示工作平台”。</p>
             </div>
 
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item">01 项目背景</span>
@@ -248,7 +261,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">06</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">06</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -263,7 +277,8 @@
             <div class="compare-stage">
                 <div class="content-cluster">
                     <h3>非统一底稿承载方式</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.5;">
                             <li>内容要么依附页面，要么固化为单次结果</li>
                             <li>标题、层级与逻辑关系缺少统一承载</li>
@@ -273,7 +288,8 @@
                 </div>
                 <div class="content-cluster">
                     <h3>结构化内容底稿</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.5;">
                             <li>以 Markdown 沉淀统一、清晰的内容底稿</li>
                             <li>集中承载标题、要点与逻辑关系</li>
@@ -287,7 +303,7 @@
                 <p>核心价值：Markdown 不是一版结果，而是可持续加工、可接入 AI 协同与页面呈现的统一内容底稿。</p>
             </div>
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item">01 项目背景</span>
@@ -296,7 +312,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">07</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">07</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -311,7 +328,8 @@
             <div class="compare-stage">
                 <div class="content-cluster">
                     <h3>单次出稿路径</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.5;">
                             <li>核心价值集中在快速给出一版结果</li>
                             <li>生成后难围绕同一内容继续修改与加工</li>
@@ -321,7 +339,8 @@
                 </div>
                 <div class="content-cluster">
                     <h3>AI 持续协同机制</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.5;">
                             <li>在草稿阶段形成内容框架</li>
                             <li>在编辑与页面元素层面持续润色和局部优化</li>
@@ -335,7 +354,7 @@
                 <p>核心价值：AI 不是一次出稿即结束，而是围绕统一底稿持续参与内容形成、修改与优化的协同机制。</p>
             </div>
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item">01 项目背景</span>
@@ -344,7 +363,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">08</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">08</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -379,7 +399,7 @@
                 <p>核心价值：不是沿用传统工具的页面编辑式全流程，而是围绕统一底稿与 AI 持续协同，形成内容表达驱动的一站式演示工作链路。</p>
             </div>
         </div>
-    
+
         <div class="bottom-nav">
             <div class="nav-links">
                 <span class="nav-item">01 项目背景</span>
@@ -388,7 +408,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">09</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">09</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -439,7 +460,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">11</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">11</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -479,7 +501,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">12</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">12</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -519,7 +542,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">13</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">13</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -546,7 +570,8 @@
             <div class="compare-stage">
                 <div class="content-cluster">
                     <h3>主体系统已落地</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.45;">
                             <li>结构化编辑、实时预览、演示控制等核心功能已实现</li>
                             <li>已支撑从内容形成到页面呈现、演示展示的基础工作流</li>
@@ -555,7 +580,8 @@
                 </div>
                 <div class="content-cluster">
                     <h3>AI 原型已成型</h3>
-                    <blockquote style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
+                    <blockquote
+                        style="background: transparent; border-left: var(--blue-line) solid var(--google-blue); margin-top: 28px;">
                         <ul style="line-height: 2.45;">
                             <li>AI 原型设计与关键交互验证已完成</li>
                             <li>已覆盖内容生成、辅助编辑与样式生成等核心流程</li>
@@ -577,7 +603,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">15</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">15</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -590,15 +617,15 @@
         <div class="showcase-main">
             <figure class="hero-figure">
                 <div class="hero-frame">
-                    <img class="hero-shot" src="assets/screenshots/图1-1：智绘演示欢迎页.png" alt="智绘演示欢迎页">
+                                <img class="hero-shot" src="assets/screenshots/图1-1：智绘演示欢迎页.png" alt="系统统一入口界面">
                 </div>
                 <div class="hero-badge">
-                    <strong>智绘演示欢迎页</strong>
+                                <strong>系统统一入口界面</strong>
                 </div>
             </figure>
 
             <div class="showcase-panel">
-                <p>欢迎页作为系统统一入口，支持文稿打开、新建与 AI 生成等核心起始操作，帮助用户快速进入演示内容准备流程。</p>
+                        <p>该界面作为系统统一入口，支持文稿打开、新建与 AI 生成等核心起始操作，帮助用户快速进入演示内容准备流程。</p>
             </div>
         </div>
 
@@ -610,7 +637,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">16</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">16</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
 
     </section>
@@ -631,7 +659,7 @@
                 <img class="dual-shot" src="assets/screenshots/图2-3：AI 辅助编辑面板.png" alt="AI 辅助编辑面板">
                 <figcaption class="dual-badge">AI 辅助编辑面板</figcaption>
             </figure>
-            <p class="dual-description">系统已形成“AI 生成初稿—AI 辅助编辑”的连续能力链路，用户可在同一界面完成从主题生成到草稿成型、再到表达优化的衔接操作，并围绕统一内容持续补充与润色，提升内容准备效率和一致性。</p>
+            <p class="dual-description">系统已形成“AI 生成初稿—AI 辅助编辑”的连续能力链路，支持用户在同一界面完成内容生成、编辑优化与持续完善。</p>
         </div>
 
         <div class="bottom-nav">
@@ -642,7 +670,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">17</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">17</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
 
     </section>
@@ -656,7 +685,8 @@
         <div class="showcase-main">
             <figure class="hero-figure">
                 <div class="hero-frame">
-                    <img class="hero-shot" src="assets/screenshots/图3-2：预览界面中选定页面元素进行 AI 优化.png" alt="预览界面中选定页面元素进行 AI 优化">
+                    <img class="hero-shot" src="assets/screenshots/图3-2：预览界面中选定页面元素进行 AI 优化.png"
+                        alt="预览界面中选定页面元素进行 AI 优化">
                 </div>
                 <div class="hero-badge">
                     <strong>预览界面中的 AI 优化</strong>
@@ -664,7 +694,7 @@
             </figure>
 
             <div class="showcase-panel">
-                <p>系统已支持在预览阶段围绕选定页面元素发起 AI 优化，使内容完善与页面呈现在同一工作流中持续推进。</p>
+                        <p>系统已支持在预览阶段围绕选定页面元素发起 AI 优化，使页面结果能够在预览过程中继续调整和完善。</p>
             </div>
         </div>
 
@@ -676,7 +706,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">18</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">18</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
 
     </section>
@@ -698,7 +729,7 @@
             </figure>
 
             <div class="showcase-panel">
-                <p>演示环节已支持讲者视图与观众视图协同展示，讲者可在现场进行翻页与流程控制，并结合激光笔、计时器等辅助功能完成节奏把控；观众端同步呈现核心内容，提升答辩与汇报场景下的可控性和完成度。</p>
+                        <p>系统已支持讲者视图与观众视图协同展示，讲者可在现场完成翻页与流程控制，并结合激光笔、计时器等辅助功能把控汇报节奏，从而提升答辩与汇报场景下的可控性与流畅性。</p>
             </div>
         </div>
 
@@ -710,7 +741,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">19</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">19</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
 
     </section>
@@ -751,7 +783,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">20</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">20</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
 
     </section>
@@ -792,7 +825,8 @@
                 <span class="nav-item active">04 项目落地基础与实施保障</span>
                 <span class="nav-item">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">21</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">21</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
 
     </section>
@@ -846,7 +880,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item active">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">23</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">23</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -886,7 +921,8 @@
                 <span class="nav-item">04 项目落地基础与实施保障</span>
                 <span class="nav-item active">05 社会价值与发展前景</span>
             </div>
-            <span class="page-indicator"><span class="page-current">24</span><span class="page-sep"> / </span><span class="page-total">24</span></span>
+            <span class="page-indicator"><span class="page-current">24</span><span class="page-sep"> / </span><span
+                    class="page-total">24</span></span>
         </div>
     </section>
 
@@ -904,19 +940,20 @@
 
     <!-- 导出悬浮操作区 -->
     <div class="export-btn" id="exportBtn" title="将所有页面转换为截图并拼接为 PPTX 下载">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
         导出 PPTX（高清改版）
     </div>
-    
+
     <div class="export-overlay" id="exportOverlay">
         <div class="spinner"></div>
         <p id="exportStatus">唤醒导出引擎中...</p>
     </div>
 
 </body>
-</html>
 
+</html>

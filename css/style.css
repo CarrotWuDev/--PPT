@@ -264,7 +264,7 @@ body {
     margin-top: 0;
     align-content: center;
     align-items: start;
-    row-gap: 22px;
+    row-gap: 44px;
 }
 .dual-card {
     margin: 0;
@@ -299,7 +299,7 @@ body {
 }
 .dual-description {
     grid-column: 1 / -1;
-    margin: 0;
+    margin: 8px 0 0;
     font-size: 30px;
     line-height: 1.66;
     color: var(--text-body);
